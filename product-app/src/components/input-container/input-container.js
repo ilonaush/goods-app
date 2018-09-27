@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions/actions';
 import {bindActionCreators} from "redux";
-import './input.css';
 import AutoComplete from '../autocomplete/autocomplete';
 
 class InputContainer extends Component {

@@ -4,15 +4,14 @@ import {bindActionCreators} from "redux";
 import actions from "../../redux/actions/actions";
 import { connect } from "react-redux";
 import './item-container.css';
-
 class ItemContainer extends Component {
     constructor() {
         super();
     }
 
     render() {
-        let goods = this.props.goods;
-        let sum = this.props.sum;
+        const goods = this.props.goods;
+        const sum = this.props.sum;
         return (
             <div className='itemBox'>
                 <div>

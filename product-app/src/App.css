@@ -8,26 +8,70 @@ html {
 body, #root {
     min-height: 100%;
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 .App {
     text-align: center;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
 }
 
-.printList {
-    margin-top: 10px;
+
+h3 {
+    color: #000000;
 }
 
-button {
+.buttonCloud.cloud {
     font-family: 'Montserrat', sans-serif;
-    padding: 10px;
-    background-color: #b6e4fe;
-    border: none;
     color: black;
     font-size: 15px;
-    margin-bottom: 10px;
+    margin: 45px auto 10px auto;
+    cursor: pointer;
     width: 130px;
+    height: 40px;
+    position: relative;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons .cloud {
+    margin: 40px 5px 0 0;
+}
+
+.buttons button {
+    margin-left: 5px;
+    border-radius: 3px;
+    border: none;
+    background: #f58da8;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+.buttonCloud.cloud:before {
+    width: 60px;
+    height: 60px;
+    top: -40px;
+    right: 23px;
+}
+
+.buttonCloud.cloud:after {
+    width: 60px;
+    height: 62px;
+    top: -29px;
+    left: 23px;
+}
+
+.buttonCloud.cloud div {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .itemList button {
@@ -68,8 +112,54 @@ button {
     margin-bottom: 10px;
 }
 
+
+.cloud, .cloudshadow {
+    width: 200px;
+    height: 70px;
+    background: #b3d2ff;
+    border-radius: 100px;
+    position: relative;
+    margin: 150px auto 10px auto;
+}
+.cloud:after, .cloud:before, .cloudshadow:after, .cloudshadow:before {
+    content: '';
+    position: absolute;
+    background: #b3d2ff;
+    z-index: 1
+}
+.cloudshadow, .cloudshadow:after, .cloudshadow:before {
+    margin: 0;
+    box-shadow: 0 0 15px #2c3e50;
+    z-index: -99;
+}
+.cloud:after, .cloudshadow:after {
+    width: 80px;
+    height: 100px;
+    top: -40px;
+    left: 30px;
+    border-radius: 100px;
+}
+.cloud:before, .cloudshadow:before  {
+    width: 100px;
+    height: 100px;
+    top: -60px;
+    right: 30px;
+    border-radius: 200px;
+}
+
+.title {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+
 .head-title {
-    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .arrowDown {
@@ -126,8 +216,4 @@ button {
     border-bottom: 1px solid black;
 
 }
-
-
-
-
 

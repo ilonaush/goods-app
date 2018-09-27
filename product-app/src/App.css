@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html {
+    height: 100%;
+    background: url("./background.jpg") fixed;
+}
+
+body, #root {
+    min-height: 100%;
+    height: 100%;
+}
+.App {
+    text-align: center;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.printList {
+    margin-top: 10px;
+}
+
+h3 {
+    color: #000000;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    background-color: #b6e4fe;
+    border: none;
+    color: black;
+    font-size: 15px;
+    margin-bottom: 10px;
+    width: 130px;
+}
+
+.itemList button {
+    width: 100px;
+    margin-top: 10px;
+}
+
+.select-box input {
+    width: 100%;
+}
+
+.listTable {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.pdfCanvas {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.itemBox, .emptyMessage {
+    width: 41%;
+    margin:  0 auto;
+}
+
+.emptyMessage {
+    padding: 10px;
+    background-color: #f58da8;
+    margin-bottom: 10px;
+}
+
+.head-title {
+    margin-top: 50px;
+}

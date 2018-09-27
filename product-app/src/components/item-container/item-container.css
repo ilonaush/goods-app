@@ -1,0 +1,19 @@
+.itemList {
+    border: 1px solid black;
+    width: 100%;
+    margin: 10px auto;
+    font-size: 20px;
+    background-color: rgba(255,255,255, 0.6);
+}
+
+.item div {
+    width: 50%;
+}
+
+.item {
+    display: flex;
+}
+
+button {
+    margin-left: 5px;
+}

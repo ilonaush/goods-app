@@ -57,8 +57,9 @@ class AutoComplete extends Component {
     }
 
     handleClick(event) {
+        debugger;
         const selectedValue = event.target.innerHTML;
-        const input = event.target.parentNode.previousSibling;
+        const input = event.target.parentNode.parentNode.childNodes[0];
         input.value = selectedValue;
         this.setState({
             category: selectedValue

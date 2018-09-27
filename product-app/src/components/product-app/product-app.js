@@ -11,12 +11,20 @@ class  ProductApp extends Component {
     render () {
         return (
             <div>
-                <h1 className='head-title'>Goods  List</h1>
-                <InputContainer/>
-                <ItemContainer/>
-                <button className='printList'>
-                    <Link to="/pdf">View List</Link>
-            </button>
+                <div>
+                    <div className='title'>
+                        <div className="cloud">
+                            <div className="cloudshadow">
+                            </div>
+                        </div>
+                        <h1 className='head-title'>Goods List</h1>
+                    </div>
+                </div>
+                    <InputContainer/>
+                    <ItemContainer/>
+                <div className="buttonCloud cloud">
+                    <div><Link to='/pdf'>View list</Link></div>
+                </div>
             </div>
         )
     }

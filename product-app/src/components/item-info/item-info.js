@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 
 class ItemInfo extends  Component {
@@ -51,7 +52,10 @@ class ItemInfo extends  Component {
                     <div className="price">{this.state.isEditable ? <input value={this.state.price} onChange={this.handleInputChange} name='price'/> : this.props.item.price}</div>
                 </div>
                 <div className="buttons">
-                    {this.state.isEditable ?  <button onClick={this.onSaveClick}>Save</button> : <button onClick={this.onEditClick}>Edit</button>}
+                    {this.state.isEditable ?
+                        <button  onClick={this.onSaveClick}> Save</button> :
+                        <button  onClick={this.onEditClick}>Edit</button>
+                    }
                     <button onClick={() => this.props.deleteItem(this.props.item)}>Delete</button>
                 </div>
             </div>

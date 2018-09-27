@@ -19,7 +19,7 @@ class AutoComplete extends Component {
 
     componentDidMount() {
         document.addEventListener('click', (event) => {
-            if (event.target.className !== 'select') {
+            if (event.target.className !== 'select' && event.target.className !== 'arrowDown' ) {
                 debugger;
                 this.setState({
                     inputFocused: false,
@@ -57,8 +57,9 @@ class AutoComplete extends Component {
     }
 
     handleClick(event) {
+        debugger;
         const selectedValue = event.target.innerHTML;
-        const input = event.target.parentNode.previousSibling;
+        const input = event.target.parentNode.parentNode.childNodes[0];
         input.value = selectedValue;
         this.setState({
             category: selectedValue
@@ -76,10 +77,12 @@ class AutoComplete extends Component {
     }
 
     render () {
+        const state = this.state;
         return (
-        <div className='select-box'>
+        <div className='selectBox'>
             <input name='category' className='select' onChange={this.handleInputChange} onFocus={this.handleFocus} onBlur={this.handleFocusLost}/>
-            {(this.state.inputFocused && this.state.matchedItems.length > 0) || (this.state.matchedItems.length > 0 && this.state.inputChanged) ?
+            <div className='arrowDown' onClick={this.handleFocus}></div>
+            {(state.inputFocused && state.matchedItems.length > 0) || (state.matchedItems.length > 0 && state.inputChanged) ?
                 <ul>
                     {this.state.matchedItems.map((category) => {
                         return  <li onClick={this.handleClick}>{category}</li>

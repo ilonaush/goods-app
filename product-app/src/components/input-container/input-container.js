@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions/actions';
 import {bindActionCreators} from "redux";
-import './input.css';
 import AutoComplete from '../autocomplete/autocomplete';
 
 class InputContainer extends Component {
@@ -88,7 +87,9 @@ class InputContainer extends Component {
             <AutoComplete categories={Object.keys(this.props.goods)} handleInputChange={this.handleInputChange}/>
             <input name='name'  placeholder='name' onChange={this.handleInputChange}/>
             <input name='price' placeholder='price' type='number' onChange={this.handleInputChange}/>
-            <button onClick={this.handleAddButtonClick}>Add an item</button>
+            <div className="buttonCloud cloud" onClick={this.handleAddButtonClick}>
+                <div>Add item</div>
+            </div>
             {this.state.hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )

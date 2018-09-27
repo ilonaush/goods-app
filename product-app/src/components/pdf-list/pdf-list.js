@@ -87,7 +87,15 @@ class  PDFList extends Component {
         return (
             <div>
                 <div className='pdfCanvas'>
-                    <h1 className='head-title'>Price List</h1>
+                    <div>
+                        <div className='title'>
+                            <div className="cloud">
+                                <div className="cloudshadow">
+                                </div>
+                            </div>
+                            <h1 className='head-title'>Price List</h1>
+                        </div>
+                    </div>
                     {Object.keys(this.props.goods).map((category) => {
                         return (
                             <div className='itemList'>
@@ -95,7 +103,6 @@ class  PDFList extends Component {
                                 <div className='listTable'>
                                     <div className="name-col">Name</div>
                                     <div className="price-col">Price</div>
-
                                 </div>
                                 {this.props.goods[category].map ((item) => {
                                     return (
@@ -108,11 +115,18 @@ class  PDFList extends Component {
                                 }) }
                             </div>
                         )})}
-                    {this.props.sum.generalSum ? <h3>General Sum: {this.props.sum.generalSum}</h3> : null}
+                    {this.props.sum.generalSum ? <h3 className='itemList'>General Sum: {this.props.sum.generalSum}</h3> : null}
+                    <div className='buttons'>
+                        {Object.keys(this.props.goods).length > 0 ?
+                            <div className="buttonCloud cloud" onClick={this.makePdf}>
+                                <div>Create PDF</div>
+                            </div> :
+                            <div className='emptyMessage'><h3>Empty list. Add something to a list</h3></div>}
+                        <div className="buttonCloud cloud" onClick={this.handleAddButtonClick}>
+                            <div><Link to='/'>Back home</Link></div>
+                        </div>
+                    </div>
                 </div>
-                {Object.keys(this.props.goods).length > 0 ? <button onClick={this.makePdf}>Create PDF</button> :
-                    <div className='emptyMessage'><h3>Empty list. Add something to a list</h3></div>}
-                <div><button><Link to="/">Back home</Link></button></div>
             </div>
         )
     }

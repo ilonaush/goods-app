@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions/actions';
 import {bindActionCreators} from "redux";
 import { Link } from "react-router-dom";
-import * as jsPDF from 'jspdf';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import html2canvas from 'html2canvas';
 
-window.html2canvas = html2canvas;
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 class  PDFList extends Component {
@@ -91,7 +87,7 @@ class  PDFList extends Component {
         return (
             <div>
                 <div className='pdfCanvas'>
-                    <h3 className='head-title'>Price List</h3>
+                    <h1 className='head-title'>Price List</h1>
                     {Object.keys(this.props.goods).map((category) => {
                         return (
                             <div className='itemList'>
@@ -115,7 +111,7 @@ class  PDFList extends Component {
                     {this.props.sum.generalSum ? <h3>General Sum: {this.props.sum.generalSum}</h3> : null}
                 </div>
                 {Object.keys(this.props.goods).length > 0 ? <button onClick={this.makePdf}>Create PDF</button> :
-                    <div><h3>Empty list. Add something to a list</h3></div>}
+                    <div className='emptyMessage'><h3>Empty list. Add something to a list</h3></div>}
                 <div><button><Link to="/">Back home</Link></button></div>
             </div>
         )

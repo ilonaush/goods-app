@@ -86,11 +86,9 @@ class InputContainer extends Component {
         <div  className='inputContainer inputBox'>
             <label htmlFor="category">Select Category</label>
             <AutoComplete categories={Object.keys(this.props.goods)} handleInputChange={this.handleInputChange}/>
-            <label htmlFor="name">Name</label>
-            <input name='name'  onChange={this.handleInputChange}/>
-            <label htmlFor="price">Price</label>
-            <input name='price'  type='number' onChange={this.handleInputChange}/>
-            <button onClick={this.handleAddButtonClick}>+</button>
+            <input name='name'  placeholder='name' onChange={this.handleInputChange}/>
+            <input name='price' placeholder='price' type='number' onChange={this.handleInputChange}/>
+            <button onClick={this.handleAddButtonClick}>Add an item</button>
             {this.state.hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )

@@ -21,12 +21,12 @@ class ItemContainer extends Component {
                             <div key={category} className='itemList'>
                                 <h3>{category}</h3>
                                 {goods[category].length > 0 ? goods[category].map((item) => {
-                                        return (
-                                            <div key={item.id} >
-                                                <ItemInfo item={item} deleteItem={this.props.actions.deleteItem} editItem={this.props.actions.editItem}/>
-                                            </div>
-                                        )
-                                    }) : null}
+                                    return (
+                                        <div key={item.id} >
+                                            <ItemInfo item={item} deleteItem={this.props.actions.deleteItem} editItem={this.props.actions.editItem}/>
+                                        </div>
+                                    )
+                                }) : null}
                                 <h4>Category Sum: {sum.categoriesSum[category]}</h4>
                             </div>
                         )}) : null}

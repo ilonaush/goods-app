@@ -54,7 +54,17 @@ button {
     margin: 0 auto;
 }
 
-.itemBox {
+.itemBox, .emptyMessage {
     width: 41%;
     margin:  0 auto;
+}
+
+.emptyMessage {
+    padding: 10px;
+    background-color: #f58da8;
+    margin-bottom: 10px;
+}
+
+.head-title {
+    margin-top: 50px;
 }

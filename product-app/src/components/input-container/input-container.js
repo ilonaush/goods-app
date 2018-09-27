@@ -11,6 +11,7 @@ class InputContainer extends Component {
         this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.clearFields = this.clearFields.bind(this);
+        this.clearState = this.clearState.bind(this);
 
         this.state = {
             category: '',
@@ -20,7 +21,12 @@ class InputContainer extends Component {
         }
     }
 
-    handleAddButtonClick() {
+    handleAddButtonClick(event) {
+        if (this.state.category === '' || this.state.price === '' || this.state.name === '' ) {
+            event.preventDefault();
+            return;
+        }
+
         let item = {
             category: this.state.category,
             name: this.state.name,
@@ -29,13 +35,23 @@ class InputContainer extends Component {
         };
         this.props.actions.addItem(item);
         this.clearFields();
+        this.clearState();
     }
 
     clearFields() {
         let inputs = document.getElementsByTagName('input');
+        console.log(inputs);
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = '';
         }
+    }
+
+    clearState() {
+        this.setState({
+            category: '',
+            name: '',
+            price: ''
+        })
     }
 
     handleInputChange (event, categoryValue) {
@@ -45,39 +61,37 @@ class InputContainer extends Component {
                 hasErrored: true
             });
             return;
-        } else {
-            this.setState({
-                hasErrored: false
-            })
         }
         let type = event.currentTarget.name;
         if (type === "category") {
             this.setState({
                 category: categoryValue,
-            })}
+            })
+        }
         else if (type === 'name') {
-            debugger;
             this.setState({
                 name: value
-            })}
+            })
+        }
         else if (type === 'price') {
             this.setState({
                 price: parseInt(value)
             })
-            }
         }
+    }
+
 
     render () {
         return (
         <div  className='inputContainer inputBox'>
-            <label htmlFor="name">Select Category</label>
+            <label htmlFor="category">Select Category</label>
             <AutoComplete categories={Object.keys(this.props.goods)} handleInputChange={this.handleInputChange}/>
             <label htmlFor="name">Name</label>
             <input name='name'  onChange={this.handleInputChange}/>
             <label htmlFor="price">Price</label>
             <input name='price'  type='number' onChange={this.handleInputChange}/>
             <button onClick={this.handleAddButtonClick}>+</button>
-            {this.state.hasErrored ? <div>Fill all inputs</div> : null}
+            {this.state.hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )
     }

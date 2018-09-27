@@ -15,24 +15,24 @@ class ItemContainer extends Component {
         let sum = this.props.sum;
         return (
             <div className='itemBox'>
-            <div>
-                {Object.keys(goods).length > 0 ? Object.keys(goods).map((category) => {
-                    return  (
-                        <div key={category} className='itemList'>
-                            <h3>{category}</h3>
-                            {goods[category].length > 0 ? goods[category].map((item) => {
-                                    return (
-                                        <div key={item.id} >
-                                            <ItemInfo item={item} deleteItem={this.props.actions.deleteItem} editItem={this.props.actions.editItem}/>
-                                        </div>
-                                    )
-                                }) : null}
-                            <h4>Category Sum: {sum.categoriesSum[category]}</h4>
-                        </div>
-                    )}) : null}
-                {sum.generalSum > 0 ? <h3>General Sum: {sum.generalSum}</h3> : null}
+                <div>
+                    {Object.keys(goods).length > 0 ? Object.keys(goods).map((category) => {
+                        return  (
+                            <div key={category} className='itemList'>
+                                <h3>{category}</h3>
+                                {goods[category].length > 0 ? goods[category].map((item) => {
+                                        return (
+                                            <div key={item.id} >
+                                                <ItemInfo item={item} deleteItem={this.props.actions.deleteItem} editItem={this.props.actions.editItem}/>
+                                            </div>
+                                        )
+                                    }) : null}
+                                <h4>Category Sum: {sum.categoriesSum[category]}</h4>
+                            </div>
+                        )}) : null}
+                    {sum.generalSum > 0 ? <div className='itemList'><h3>General Sum: {sum.generalSum}</h3></div> : null}
+                </div>
             </div>
-        </div>
         )
     }
 }

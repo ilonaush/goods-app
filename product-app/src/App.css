@@ -15,6 +15,7 @@ body, #root {
     height: 100%;
 }
 
+
 h3 {
     color: #000000;
 }
@@ -78,9 +79,16 @@ h3 {
     margin-top: 10px;
 }
 
-.select-box input {
-    width: 100%;
+.selectBox {
+    display:flex;
+    outline:1px solid #a9a9a9;
+    background: white;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
 }
+
 
 .listTable {
     display: flex;
@@ -152,5 +160,60 @@ h3 {
     z-index: 999;
     width: 100%;
     margin: 0 auto;
+}
+
+.arrowDown {
+    display: inline-block;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #b092c4;
+}
+
+.inputBox input {
+    display: block;
+    width: 50%;
+    margin:  10px auto;
+    height: 20px;
+}
+
+.inputContainer {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(255,255,255, 0.6);
+}
+
+.selectBox input {
+    margin: 0;
+    width: 95%;
+    border: none;
+}
+.selectBox ul {
+    position: absolute;
+    display: block;
+    z-index: 100;
+    list-style: none;
+    top: 100%;
+    margin: 0;
+    background-color: white;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    outline: 1px solid black;
+}
+
+.selectBox ul li {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.selectBox ul li:not(:last-child) {
+    border-bottom: 1px solid black;
+
 }
 

@@ -9,7 +9,7 @@ to run the app, run ```npm run start```
 
 ## Previews
 
-At first add new item to collection and click 'Add item' button
+At first fill inputs with an item's info and add new item to collection by clicking on 'Add item' button
 ![Image of adding item](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/screenshots/add_item.png);
 
 Then you can either edit it by clicking on 'Save' button on delete it

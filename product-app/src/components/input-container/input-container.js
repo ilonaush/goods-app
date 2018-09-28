@@ -1,3 +1,10 @@
+/**
+ * InputContainer Component
+ * inserts input Block where user can add new item to the list
+ * receives props: goods(object, redux)
+ * Creation Date: 17.09.18
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions/actions';
@@ -20,12 +27,16 @@ class InputContainer extends Component {
         }
     }
 
+
+    /**
+     * @param event (object)
+     * validates each item property from this.state, sends new object to redux, clears inputs after adding
+     */
     handleAddButtonClick(event) {
         if (this.state.category === '' || this.state.price === '' || this.state.name === '' ) {
             event.preventDefault();
             return;
         }
-
         let item = {
             category: this.state.category,
             name: this.state.name,
@@ -37,14 +48,19 @@ class InputContainer extends Component {
         this.clearState();
     }
 
+    /**
+     * searches all inputs and sets their value to ''
+     */
     clearFields() {
         let inputs = document.getElementsByTagName('input');
-        console.log(inputs);
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = '';
         }
     }
 
+    /**
+     * clears all states to prevent from creating similar objects after add button clicking
+     */
     clearState() {
         this.setState({
             category: '',
@@ -53,6 +69,14 @@ class InputContainer extends Component {
         })
     }
 
+    /**
+     *
+     * @param event {object}
+     * @param categoryValue [string]
+     * reacts on each input change and sets current state
+     * on category input value change is being called from child component AutoComplete
+     * if value is '', sets this.state.hasErrored to true to show the error message
+     */
     handleInputChange (event, categoryValue) {
         let value = event.currentTarget.value;
         if (value === '') {
@@ -60,6 +84,10 @@ class InputContainer extends Component {
                 hasErrored: true
             });
             return;
+        } else {
+            this.setState({
+                hasErrored: false
+            });
         }
         let type = event.currentTarget.name;
         if (type === "category") {
@@ -83,7 +111,6 @@ class InputContainer extends Component {
     render () {
         return (
         <div  className='inputContainer inputBox'>
-            <label htmlFor="category">Select Category</label>
             <AutoComplete categories={Object.keys(this.props.goods)} handleInputChange={this.handleInputChange}/>
             <input name='name'  placeholder='name' onChange={this.handleInputChange}/>
             <input name='price' placeholder='price' type='number' onChange={this.handleInputChange}/>

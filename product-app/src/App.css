@@ -81,7 +81,6 @@ h3 {
 
 .selectBox {
     display:flex;
-    outline:1px solid #a9a9a9;
     background: white;
     align-items: center;
     position: relative;
@@ -89,6 +88,10 @@ h3 {
     margin: 0 auto;
 }
 
+.no-decoration {
+    text-decoration: none;
+    color: black;
+}
 
 .listTable {
     display: flex;
@@ -125,7 +128,8 @@ h3 {
     content: '';
     position: absolute;
     background: #b3d2ff;
-    z-index: 1
+    z-index: 1;
+
 }
 .cloudshadow, .cloudshadow:after, .cloudshadow:before {
     margin: 0;
@@ -172,25 +176,43 @@ h3 {
     border-top: 6px solid #b092c4;
 }
 
+.inputBox, .itemList {
+    border-radius: 10px;
+    border: 3px solid #ffdf44;
+    padding: 20px;
+}
+
 .inputBox input {
     display: block;
     width: 50%;
     margin:  10px auto;
-    height: 20px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #b092c4;
 }
 
-.inputContainer {
+input, .selectBox {
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #b092c4;
+}
+
+input:focus {
+    outline: none;
+}
+
+.inputBox {
     width: 40%;
     margin: 0 auto;
-    border: 1px solid black;
-    padding: 10px;
-    background-color: rgba(255,255,255, 0.6);
+    padding: 30px;
+    background-color: white;
 }
 
 .selectBox input {
     margin: 0;
     width: 95%;
     border: none;
+    height: 25px;
 }
 .selectBox ul {
     position: absolute;
@@ -214,6 +236,5 @@ h3 {
 
 .selectBox ul li:not(:last-child) {
     border-bottom: 1px solid black;
-
 }
 

@@ -9,6 +9,9 @@ to run the app, run ```npm run start```
 
 ## Preview
 
+![Image of adding item](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/images/add_item.png);
+![Image of editing item](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/images/edit_item.png);
+![Image of creating PDF](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/images/make_PDF.png);
 
 
 ## Deployment

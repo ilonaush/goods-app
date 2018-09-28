@@ -7,12 +7,16 @@ creating PDF from the actual items list.
 
 to run the app, run ```npm run start```
 
-## Preview
+## Previews
 
+At first add new item to collection and click 'Add item' button
 ![Image of adding item](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/screenshots/add_item.png);
-![Image of editing item](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/screenshots/edit_item.png);
-![Image of creating PDF](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/screenshots/make_PDF.png);
 
+Then you can either edit it by clicking on 'Save' button on delete it
+![Image of editing item](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/screenshots/edit_item.png);
+
+Clicking on 'view list' button, you can see your item list and then create a PDF file from it
+![Image of creating PDF](https://github.com/ilonaush/goods-app/blob/feature/task-04/md/screenshots/make_PDF.png);
 
 ## Deployment
 

@@ -1,3 +1,9 @@
+/**
+ * PDFList component
+ * renders list of actual items and creates PDF from it
+ * creation date: 26/09/18
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions/actions';
@@ -17,6 +23,11 @@ class  PDFList extends Component {
         this.generateTables = this.generateTables.bind(this);
     }
 
+
+    /**
+     * creates tables in PDF according to each category
+     * @param docDef {object}
+     */
     generateTables (docDef) {
         let categoryArr = Object.keys(this.props.goods);
         for (let i = 0; i < categoryArr.length; i++) {
@@ -24,7 +35,7 @@ class  PDFList extends Component {
                 text: `${categoryArr[i]}`, style: 'tableHeader'
             });
             docDef.content.push({
-                style: 'tableExample',
+                style: 'table',
                 table: {
                     widths: '*',
                     body: this.generateRows(categoryArr[i])
@@ -36,6 +47,9 @@ class  PDFList extends Component {
         })
     }
 
+    /**
+     * initializes PDF, sets its initial content ans style
+     */
     makePdf() {
         let docDefinition = {
             content: [
@@ -55,22 +69,28 @@ class  PDFList extends Component {
                     bold: true,
                     alignment: 'center'
                 },
-                tableExample: {
-                    margin: [5, 5, 5, 5],
+                tableBody: {
+                    margin: [10, 10, 10, 10],
                     alignment: 'center'
                 },
                 tableHeader: {
                     bold: true,
                     fontSize: 16,
                     color: 'black',
-                    alignment: 'center'
-            }
-        },
-    };
-    this.generateTables(docDefinition);
-    pdfMake.createPdf(docDefinition).open();
+                    alignment: 'center',
+                    margin: [10, 0, 0, 0]
+                }
+            },
+        };
+        this.generateTables(docDefinition);
+        pdfMake.createPdf(docDefinition).open();
     }
 
+    /**
+     * creates content of each table according to category
+     * @param category [string]
+     * @returns {array}  additional content to PDF file
+     */
     generateRows(category) {
         let mainArray = [['Name', 'Price']];
         for (let i = 0; i < this.props.goods[category].length; i++) {
@@ -122,8 +142,8 @@ class  PDFList extends Component {
                                 <div>Create PDF</div>
                             </div> :
                             <div className='emptyMessage'><h3>Empty list. Add something to a list</h3></div>}
-                        <div className="buttonCloud cloud" onClick={this.handleAddButtonClick}>
-                            <div><Link to='/'>Back home</Link></div>
+                        <div className="buttonCloud cloud">
+                            <div><Link to='/' className='no-decoration'>Back home</Link></div>
                         </div>
                     </div>
                 </div>

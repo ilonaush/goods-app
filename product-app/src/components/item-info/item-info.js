@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+/**
+ * ItemInfo Component
+ * renders each item
+ * receives props: item {object}
+ * creation date: 18/09/18
+ */
 
+import React, { Component } from 'react';
 
 class ItemInfo extends  Component {
     constructor(props) {
@@ -15,7 +20,10 @@ class ItemInfo extends  Component {
         }
     }
 
-
+    /**
+     * handles input change on editing mode and sets new state
+     * @param event {object}
+     */
     handleInputChange(event) {
         if (event.target.name === 'name') {
             this.setState({
@@ -28,6 +36,9 @@ class ItemInfo extends  Component {
         }
     }
 
+    /**
+     * handles edit button click and switches edit mode on
+     */
     onEditClick () {
         this.setState ({
             isEditable: true
@@ -35,6 +46,9 @@ class ItemInfo extends  Component {
 
     }
 
+    /**
+     * handles save button click, switches edit mode off and calls editItem function which saves edited item
+     */
     onSaveClick() {
         this.setState ({
             isEditable: false

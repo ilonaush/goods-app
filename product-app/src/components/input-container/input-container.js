@@ -87,7 +87,7 @@ class InputContainer extends Component {
         } else {
             this.setState({
                 hasErrored: false
-            });
+            })
         }
         let type = event.currentTarget.name;
         if (type === "category") {

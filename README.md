@@ -27,4 +27,6 @@ to deploy the app on a live system, run ```npm run deploy```.
 
 ## License
 
+This project is licensed under the MIT License - see the file for details
+
 

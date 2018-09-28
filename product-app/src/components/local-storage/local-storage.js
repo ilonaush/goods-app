@@ -1,3 +1,7 @@
+
+/**
+ * @returns {object} store from local Storage
+ */
 export const loadStore = () => {
     try {
         const serializedState = localStorage.getItem('state');
@@ -9,7 +13,10 @@ export const loadStore = () => {
         return undefined;
     }
 };
-
+/**
+ * records store to local storage
+ * @param state {object}
+ */
 export const saveStore = (state) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('state', serializedState);

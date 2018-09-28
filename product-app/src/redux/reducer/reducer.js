@@ -2,7 +2,6 @@
 let reducer = (state = {goods: [], sum: {}}, action) => {
     switch (action.type) {
         case 'ADD_ITEM':
-            debugger;
             return {
                 ...state,
                 goods: {
@@ -51,21 +50,6 @@ let reducer = (state = {goods: [], sum: {}}, action) => {
                 }
             });
             return State;
-
-            //     ...state,
-            //     items: [
-            //         ...state.items,
-            //         [action.item.category]: {
-            //             ...state[action.item.category],
-            //             [action.item.id]: {
-            //                 ...state[action.item.category][action.item.id],
-            //                 name: action.newName,
-            //                 price: action.newPrice
-            //             }
-            //         }
-            //     ],
-            //     sum:  ((state['sum'] || {}) || 0) - action.item.price + action.newPrice
-            // }
         case 'DELETE_ITEM':
             let newState = {
                 ...state,
@@ -90,23 +74,13 @@ let reducer = (state = {goods: [], sum: {}}, action) => {
             if (newState.goods[action.item.category].length === 0) {
                 delete newState.goods[action.item.category];
             }
-            console.log(newState)
             return newState;
-            // let newObj = {
-            //     ...state,
-            //     items: {
-            //         ...state.items,
-            //         [action.item.category]: {
-            //             ...state[action.item.category]
-            //         }
-            //     }
-            // };
-            // newObj[action.item.category]['sum'] -= action.item.price;
-            // delete newObj[action.item.category][action.item.id];
-            // return newObj;
+
 
         default:
             return state;
     }
 }
 export default reducer;
+
+

@@ -1,9 +1,8 @@
 .itemList {
     border: 1px solid black;
-    width: 100%;
     margin: 10px auto;
     font-size: 20px;
-    background-color: rgba(255,255,255, 0.9);
+    background-color: white;
 }
 
 .item div {

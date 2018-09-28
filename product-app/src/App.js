@@ -1,4 +1,8 @@
-
+/**
+ * App component - head component
+ * sets Redux store, downloads it from local storage, saves it;  navigates to and renders routes
+ * creation Date: 17/09/18
+ */
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -8,15 +12,13 @@ import ProductApp from './components/product-app/product-app';
 import PDFList from './components/pdf-list/pdf-list';
 import { Route } from 'react-router-dom';
 import './components/item-container/item-container.css';
-
-
 import './App.css';
+
 const predefinedStore = loadStore();
 const store = createStore(
     reducer,
     predefinedStore
 );
-
 
 store.subscribe(() => {
     saveStore(store.getState());

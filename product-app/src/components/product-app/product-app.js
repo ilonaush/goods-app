@@ -29,7 +29,7 @@ class  ProductApp extends Component {
                 </div>
                 <InputContainer/>
                 <ItemContainer/>
-                <CloudButton contents={ <Link to='/pdf' className='no-decoration'>View list</Link>} onClick={null} />
+                <CloudButton onClick={null}><Link to='/pdf' className='no-decoration'>View list</Link></CloudButton>
             </div>
         )
     }

@@ -14,7 +14,7 @@ class CloudButton extends Component {
     render () {
         return (
             <div className="buttonCloud cloud" onClick={this.props.onClick ? this.handleClick : null}>
-                <div>{this.props.contents}</div>
+                <div>{this.props.children}</div>
             </div>
         )
     }

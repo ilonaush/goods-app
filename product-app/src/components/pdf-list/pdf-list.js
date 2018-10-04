@@ -139,9 +139,9 @@ class  PDFList extends Component {
                     {this.props.sum.generalSum ? <h3 className='itemList'>General Sum: {this.props.sum.generalSum}</h3> : null}
                     <div className='buttons'>
                         {Object.keys(this.props.goods).length > 0 ?
-                            <CloudButton contents='make PDF' onClick={this.makePdf}/>:
+                            <CloudButton onClick={this.makePdf}>make PDF</CloudButton>:
                             <div className='emptyMessage'><h3>Empty list. Add something to a list</h3></div>}
-                        <CloudButton contents={<Link to='/' className='no-decoration'>Back home</Link>} onClick={null}/>
+                        <CloudButton onClick={null}><Link to='/' className='no-decoration'>Back home</Link></CloudButton>
                     </div>
                 </div>
             </div>

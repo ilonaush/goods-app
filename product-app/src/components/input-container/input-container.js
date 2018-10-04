@@ -34,6 +34,7 @@ class InputContainer extends Component {
      * validates each item property from this.state, sends new object to redux, clears inputs after adding
      */
     handleAddButtonClick(event) {
+        debugger;
         if (this.state.category === '' || this.state.price === '' || this.state.name === '' ) {
             event.preventDefault();
             return;
@@ -115,7 +116,7 @@ class InputContainer extends Component {
             <AutoComplete categories={Object.keys(this.props.goods)} handleInputChange={this.handleInputChange}/>
             <input name='name'  placeholder='name' onChange={this.handleInputChange}/>
             <input name='price' placeholder='price' type='number' onChange={this.handleInputChange}/>
-            <CloudButton contents='Add item' onClick={this.handleAddButtonClick}/>
+            <CloudButton onClick={this.handleAddButtonClick}>Add item</CloudButton>
             {this.state.hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )

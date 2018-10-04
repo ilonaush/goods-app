@@ -8,6 +8,7 @@ import InputContainer from '../input-container/input-container';
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import ItemContainer from '../item-container/item-container';
+import CloudButton from '../cloud-button/cloud-button';
 
 class  ProductApp extends Component {
     constructor() {
@@ -26,11 +27,9 @@ class  ProductApp extends Component {
                         <h1 className='head-title'>Goods List</h1>
                     </div>
                 </div>
-                    <InputContainer/>
-                    <ItemContainer/>
-                <div className="buttonCloud cloud">
-                    <div><Link to='/pdf' className='no-decoration'>View list</Link></div>
-                </div>
+                <InputContainer/>
+                <ItemContainer/>
+                <CloudButton onClick={null}><Link to='/pdf' className='no-decoration'>View list</Link></CloudButton>
             </div>
         )
     }

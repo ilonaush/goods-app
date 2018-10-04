@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions/actions';
 import {bindActionCreators} from "redux";
 import AutoComplete from '../autocomplete/autocomplete';
+import CloudButton from '../cloud-button/cloud-button';
 
 class InputContainer extends Component {
     constructor () {
@@ -33,6 +34,7 @@ class InputContainer extends Component {
      * validates each item property from this.state, sends new object to redux, clears inputs after adding
      */
     handleAddButtonClick(event) {
+        debugger;
         if (this.state.category === '' || this.state.price === '' || this.state.name === '' ) {
             event.preventDefault();
             return;
@@ -114,9 +116,7 @@ class InputContainer extends Component {
             <AutoComplete categories={Object.keys(this.props.goods)} handleInputChange={this.handleInputChange}/>
             <input name='name'  placeholder='name' onChange={this.handleInputChange}/>
             <input name='price' placeholder='price' type='number' onChange={this.handleInputChange}/>
-            <div className="buttonCloud cloud" onClick={this.handleAddButtonClick}>
-                <div>Add item</div>
-            </div>
+            <CloudButton onClick={this.handleAddButtonClick}>Add item</CloudButton>
             {this.state.hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )

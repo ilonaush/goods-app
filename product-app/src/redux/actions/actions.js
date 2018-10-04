@@ -1,5 +1,6 @@
 let actions = {
     addItem: function(item) {
+        debugger;
         return {
             type: 'ADD_ITEM',
             item: item

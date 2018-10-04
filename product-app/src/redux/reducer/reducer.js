@@ -2,6 +2,7 @@
 let reducer = (state = {goods: [], sum: {}}, action) => {
     switch (action.type) {
         case 'ADD_ITEM':
+            debugger;
             return {
                 ...state,
                 goods: {

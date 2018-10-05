@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51125f73-e5c7-4b31-8ad8-22bfd351aff3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-app/src/components/autocomplete/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/product-app/src/components/autocomplete/autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-app/src/components/input-container/input-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/product-app/src/components/input-container/input-container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-app/src/components/item-info/item-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/product-app/src/components/item-info/item-info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-app/src/components/pdf-list/pdf-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/product-app/src/components/pdf-list/pdf-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-app/src/components/product-app/product-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/product-app/src/components/product-app/product-app.js" afterDir="false" />
-    </list>
+    <list default="true" id="51125f73-e5c7-4b31-8ad8-22bfd351aff3" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -70,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/product-app/src/components/item-container/item-container.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="17">
+              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -79,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/product-app/src/components/pdf-list/pdf-list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="110" column="43" lean-forward="true" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+            <state relative-caret-position="-51">
+              <caret line="111" column="43" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
               <folding>
                 <element signature="e#113#154#0" expanded="true" />
               </folding>
@@ -101,16 +94,28 @@
         <entry file="file://$PROJECT_DIR$/product-app/src/components/product-app/product-app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="11" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#115#179#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/product-app/src/components/cloud-title/cloud-title.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/product-app/src/components/cloud-title/cloud-title.js">
+        <entry file="file://$PROJECT_DIR$/product-app/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+            <state>
+              <caret line="7433" column="10" selection-start-line="7433" selection-start-column="10" selection-end-line="7433" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -119,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/product-app/src/components/item-info/item-info.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
-              <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -137,7 +142,7 @@
         <entry file="file://$PROJECT_DIR$/product-app/src/components/input-container/input-container.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="640">
-              <caret line="172" column="14" lean-forward="true" selection-start-line="172" selection-start-column="14" selection-end-line="172" selection-end-column="14" />
+              <caret line="171" column="14" selection-start-line="171" selection-start-column="14" selection-end-line="171" selection-end-column="14" />
               <folding>
                 <element signature="e#167#208#0" expanded="true" />
               </folding>
@@ -149,7 +154,7 @@
         <entry file="file://$PROJECT_DIR$/product-app/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
-              <caret line="203" lean-forward="true" selection-start-line="203" selection-end-line="203" />
+              <caret line="206" selection-start-line="206" selection-end-line="206" />
             </state>
           </provider>
         </entry>
@@ -320,11 +325,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29584000" />
+    <option name="totallyTimeSpent" value="29588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -408,8 +412,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/product-app/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27965">
-          <caret line="7433" column="10" lean-forward="true" selection-start-line="7433" selection-start-column="10" selection-end-line="7433" selection-end-column="10" />
+        <state>
+          <caret line="7433" column="10" selection-start-line="7433" selection-start-column="10" selection-end-line="7433" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -440,7 +444,7 @@
     <entry file="file://$PROJECT_DIR$/product-app/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="203" lean-forward="true" selection-start-line="203" selection-end-line="203" />
+          <caret line="206" selection-start-line="206" selection-end-line="206" />
         </state>
       </provider>
     </entry>
@@ -463,15 +467,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/product-app/src/components/item-container/item-container.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="17">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/product-app/src/components/item-info/item-info.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
-          <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -485,7 +489,7 @@
     <entry file="file://$PROJECT_DIR$/product-app/src/components/input-container/input-container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
-          <caret line="172" column="14" lean-forward="true" selection-start-line="172" selection-start-column="14" selection-end-line="172" selection-end-column="14" />
+          <caret line="171" column="14" selection-start-line="171" selection-start-column="14" selection-end-line="171" selection-end-column="14" />
           <folding>
             <element signature="e#167#208#0" expanded="true" />
           </folding>
@@ -495,14 +499,17 @@
     <entry file="file://$PROJECT_DIR$/product-app/src/components/product-app/product-app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="11" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#115#179#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/product-app/src/components/pdf-list/pdf-list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="110" column="43" lean-forward="true" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+        <state relative-caret-position="-51">
+          <caret line="111" column="43" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
           <folding>
             <element signature="e#113#154#0" expanded="true" />
           </folding>
@@ -511,8 +518,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/product-app/src/components/cloud-title/cloud-title.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

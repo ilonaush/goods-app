@@ -11,6 +11,8 @@ import {bindActionCreators} from "redux";
 import { Link } from "react-router-dom";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import CloudTitle from '../cloud-title/cloud-title';
+
 import CloudButton from '../../components/cloud-button/cloud-button';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -108,15 +110,7 @@ class  PDFList extends Component {
         return (
             <div>
                 <div className='pdfCanvas'>
-                    <div>
-                        <div className='title'>
-                            <div className="cloud">
-                                <div className="cloudshadow">
-                                </div>
-                            </div>
-                            <h1 className='head-title'>Price List</h1>
-                        </div>
-                    </div>
+                    <CloudTitle>Price List</CloudTitle>
                     {Object.keys(this.props.goods).map((category) => {
                         return (
                             <div className='itemList'>

@@ -57,15 +57,16 @@ class ItemInfo extends  Component {
     }
 
     render (){
+        const {isEditable, name, price} = this.state;
         return (
             <div>
                 <div className='item'>
-                    <div className="name">{this.state.isEditable ? <input  value={this.state.name} name='name' onChange={this.handleInputChange} /> : this.props.item.name}
+                    <div className="name">{isEditable ? <input  value={name} name='name' onChange={this.handleInputChange} /> : name}
                     </div>
-                    <div className="price">{this.state.isEditable ? <input value={this.state.price} onChange={this.handleInputChange} name='price'/> : this.props.item.price}</div>
+                    <div className="price">{isEditable ? <input value={price} onChange={this.handleInputChange} name='price'/> : price}</div>
                 </div>
                 <div className="buttons">
-                    {this.state.isEditable ?
+                    {isEditable ?
                         <button  onClick={this.onSaveClick}> Save</button> :
                         <button  onClick={this.onEditClick}>Edit</button>
                     }

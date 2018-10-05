@@ -1,8 +1,8 @@
 .itemList {
-    border: 1px solid black;
     margin: 10px auto;
     font-size: 20px;
     background-color: white;
+    padding: 20px;
 }
 
 .item div {

@@ -14,16 +14,26 @@ class AutoComplete extends Component {
         this.state = {
             inputFocused: false,
             category: '',
-            matchedItems: this.fillAutoComplete('',this.props.categories || []),
-            inputChanged: false
+            matchedItems: [],
+            inputChanged: false,
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.fillAutoComplete = this.fillAutoComplete.bind(this);
         this.handleFocusLost = this.handleFocusLost.bind(this);
+
     }
 
+    /**
+     * sets values to matchedItems - cars brand
+     * @param nextProps {object}
+     */
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            matchedItems: this.fillAutoComplete('', nextProps.values),
+        })
+    }
     /**
      * reacts on document click and hides auto complete list
      */
@@ -35,16 +45,23 @@ class AutoComplete extends Component {
                     inputChanged: false
                 })
             }
+
+            if (event.target.className === 'option' && event.target.className !== 'select' && event.target.className !== 'arrowDown') {
+                this.handleFocusLost(event);
+            }
         });
+
+
     }
 
     /**
      *  on input focus losing. sends the opted category to InputContainer parent component
      * @param event [object]
      */
-    handleFocusLost(event) {
-        this.props.handleInputChange(event, this.state.category);
+    handleFocusLost() {
+        this.props.handleInputChange(this.state.category, this.props.type );
     }
+
 
     /**
      *
@@ -57,6 +74,7 @@ class AutoComplete extends Component {
         let matchedItems = [];
         if (value === "") {
             matchedItems = [...categories];
+            debugger;
             return matchedItems;
         }
 
@@ -74,7 +92,7 @@ class AutoComplete extends Component {
      */
     handleFocus() {
         this.setState({
-            inputFocused: true
+            inputFocused: true,
         })
     }
 
@@ -84,7 +102,6 @@ class AutoComplete extends Component {
      * handles click on the auto complete item ans sets input category value to value of clicked item
      */
     handleClick(event) {
-        debugger;
         const selectedValue = event.target.innerHTML;
         const input = event.target.parentNode.parentNode.childNodes[0];
         input.value = selectedValue;
@@ -101,25 +118,24 @@ class AutoComplete extends Component {
      */
     handleInputChange(event) {
         let category = event.target.value;
-
         this.setState( {
             category,
-            matchedItems: this.fillAutoComplete(category, this.props.categories),
+            matchedItems: this.fillAutoComplete(category, this.props.values),
             inputChanged: true
         })
     }
 
     render () {
-        const state = this.state;
+        const {inputFocused, matchedItems, inputChanged, ...rest} = this.state;
         return (
         <div className='selectBox'>
-            <input name='category' placeholder='Select category...' className='select' onChange={this.handleInputChange}
-                   onFocus={this.handleFocus} onBlur={this.handleFocusLost}/>
-            <div className='arrowDown' onClick={this.handleFocus}></div>
-            {(state.inputFocused && state.matchedItems.length > 0) || (state.matchedItems.length > 0 && state.inputChanged) ?
+            <input name='category' placeholder={this.props.children} className='select' onChange={this.handleInputChange}
+                   onFocus={this.handleFocus}/>
+            <div className='arrowDown' onClick={this.handleFocus}/>
+            {(inputFocused && matchedItems.length > 0) || (matchedItems.length > 0 && inputChanged) ?
                 <ul>
                     {this.state.matchedItems.map((category) => {
-                        return  <li onClick={this.handleClick}>{category}</li>
+                        return  <li className='option' onClick={this.handleClick}>{category}</li>
                     })}
                 </ul> : null
             }

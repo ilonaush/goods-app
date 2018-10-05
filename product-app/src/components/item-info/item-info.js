@@ -43,14 +43,13 @@ class ItemInfo extends  Component {
         this.setState ({
             isEditable: true
         })
-
     }
 
     /**
      * handles save button click, switches edit mode off and calls editItem function which saves edited item
      */
     onSaveClick() {
-        this.setState ({
+        this.setState({
             isEditable: false
         })
         this.props.editItem(this.props.item, this.state.name, this.state.price);

@@ -20,6 +20,10 @@ h3 {
     color: #000000;
 }
 
+button {
+    cursor: pointer;
+}
+
 .buttonCloud.cloud {
     font-family: 'Montserrat', sans-serif;
     color: black;
@@ -114,7 +118,6 @@ h3 {
     background-color: #f58da8;
     margin-bottom: 10px;
 }
-
 
 .cloud, .cloudshadow {
     width: 200px;

@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import ItemContainer from '../item-container/item-container';
 import CloudTitle from '../cloud-title/cloud-title';
+import CloudButton from '../cloud-button/cloud-button';
 
 class  ProductApp extends Component {
     constructor() {
@@ -19,11 +20,9 @@ class  ProductApp extends Component {
         return (
             <div>
                 <CloudTitle>Goods List</CloudTitle>
-                <InputContainer/>
-                <ItemContainer/>
-                <div className="buttonCloud cloud">
-                    <div><Link to='/pdf' className='no-decoration'>View list</Link></div>
-                </div>
+                    <InputContainer/>
+                    <ItemContainer/>
+                <CloudButton onClick={null}><Link to='/pdf' className='no-decoration'>View list</Link></CloudButton>
             </div>
         )
     }

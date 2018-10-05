@@ -11,6 +11,7 @@ import actions from '../../redux/actions/actions';
 import {bindActionCreators} from "redux";
 import AutoComplete from '../autocomplete/autocomplete';
 import { makeRequest } from "../request-service/request-service";
+import CloudButton from '../cloud-button/cloud-button';
 
 class InputContainer extends Component {
     constructor () {
@@ -138,7 +139,7 @@ class InputContainer extends Component {
         } else {
             this.setState({
                 hasErrored: false
-            });
+            })
         }
         if (type === "category") {
             this.setState({
@@ -166,9 +167,7 @@ class InputContainer extends Component {
             <AutoComplete values={values} handleInputChange={this.handleInputChange} type='category'>Select category</AutoComplete>
             <AutoComplete values={models.length !== 0 ? models : []} handleInputChange={this.handleInputChange} type='name'>Select name</AutoComplete>
             <input name='price' placeholder='price' type='number' onChange={(event) => this.handleInputChange(event.target.value, event)}/>
-            <div className="buttonCloud cloud" onClick={this.handleAddButtonClick}>
-                <div>Add item</div>
-            </div>
+            <CloudButton onClick={this.handleAddButtonClick}>Add item</CloudButton>
             {hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )

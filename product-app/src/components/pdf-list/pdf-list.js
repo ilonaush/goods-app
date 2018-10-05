@@ -13,6 +13,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import CloudTitle from '../cloud-title/cloud-title';
 
+import CloudButton from '../../components/cloud-button/cloud-button';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -132,13 +133,9 @@ class  PDFList extends Component {
                     {this.props.sum.generalSum ? <h3 className='itemList'>General Sum: {this.props.sum.generalSum}</h3> : null}
                     <div className='buttons'>
                         {Object.keys(this.props.goods).length > 0 ?
-                            <div className="buttonCloud cloud" onClick={this.makePdf}>
-                                <div>Create PDF</div>
-                            </div> :
+                            <CloudButton onClick={this.makePdf}>make PDF</CloudButton>:
                             <div className='emptyMessage'><h3>Empty list. Add something to a list</h3></div>}
-                        <div className="buttonCloud cloud">
-                            <div><Link to='/' className='no-decoration'>Back home</Link></div>
-                        </div>
+                        <CloudButton onClick={null}><Link to='/' className='no-decoration'>Back home</Link></CloudButton>
                     </div>
                 </div>
             </div>

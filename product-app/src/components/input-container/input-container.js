@@ -164,8 +164,8 @@ class InputContainer extends Component {
         const {hasErrored, values, models, ...rest} = this.state;
         return (
         <div  className='inputContainer inputBox'>
-            <AutoComplete values={values} handleInputChange={this.handleInputChange} type='category'>Select category</AutoComplete>
-            <AutoComplete values={models.length !== 0 ? models : []} handleInputChange={this.handleInputChange} type='name'>Select name</AutoComplete>
+            <AutoComplete values={values} handleInputChange={this.handleInputChange} type='category'>Select car brand</AutoComplete>
+            <AutoComplete values={models.length !== 0 ? models : []} handleInputChange={this.handleInputChange} type='name'>Select car model</AutoComplete>
             <input name='price' placeholder='price' type='number' onChange={(event) => this.handleInputChange(event.target.value, event)}/>
             <CloudButton onClick={this.handleAddButtonClick}>Add item</CloudButton>
             {hasErrored ? <div><b>Fill all inputs</b></div> : null}

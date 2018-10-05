@@ -14,7 +14,7 @@ class AutoComplete extends Component {
         this.state = {
             inputFocused: false,
             category: '',
-            matchedItems: this.fillAutoComplete('', []),
+            matchedItems: [],
             inputChanged: false,
         }
         this.handleClick = this.handleClick.bind(this);
@@ -25,6 +25,15 @@ class AutoComplete extends Component {
 
     }
 
+    /**
+     * sets values to matchedItems - cars brand
+     * @param nextProps {object}
+     */
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            matchedItems: this.fillAutoComplete('', nextProps.values),
+        })
+    }
     /**
      * reacts on document click and hides auto complete list
      */
@@ -64,7 +73,8 @@ class AutoComplete extends Component {
     fillAutoComplete (value , categories)  {
         let matchedItems = [];
         if (value === "") {
-            matchedItems = [...this.props.values];
+            matchedItems = [...categories];
+            debugger;
             return matchedItems;
         }
 
@@ -83,7 +93,6 @@ class AutoComplete extends Component {
     handleFocus() {
         this.setState({
             inputFocused: true,
-            matchedItems: this.fillAutoComplete('', this.props.values),
         })
     }
 
@@ -117,13 +126,13 @@ class AutoComplete extends Component {
     }
 
     render () {
-        const state = this.state;
+        const {inputFocused, matchedItems, inputChanged, ...rest} = this.state;
         return (
         <div className='selectBox'>
             <input name='category' placeholder={this.props.children} className='select' onChange={this.handleInputChange}
                    onFocus={this.handleFocus}/>
             <div className='arrowDown' onClick={this.handleFocus}/>
-            {(state.inputFocused && state.matchedItems.length > 0) || (state.matchedItems.length > 0 && state.inputChanged) ?
+            {(inputFocused && matchedItems.length > 0) || (matchedItems.length > 0 && inputChanged) ?
                 <ul>
                     {this.state.matchedItems.map((category) => {
                         return  <li className='option' onClick={this.handleClick}>{category}</li>

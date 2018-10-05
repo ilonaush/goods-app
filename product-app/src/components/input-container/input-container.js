@@ -32,7 +32,7 @@ class InputContainer extends Component {
         }
     }
 
-     componentDidMount() {
+     componentWillMount() {
         this.getList();
      }
     /**
@@ -76,7 +76,9 @@ class InputContainer extends Component {
         })
     }
 
-
+    /**
+     * receives list of cars brands and sets it to the state
+     */
     getList() {
         makeRequest('https://developers.ria.com/auto/new/marks?category_id=1&api_key=NhVhfXAfj7Z7ns7t05E32bv5BUTMid1FIH1l61hC').then((response) => {
             let marks = response.map((item) => {
@@ -89,6 +91,9 @@ class InputContainer extends Component {
         })
     }
 
+    /**
+     * gets all models by car brand and sets it to the state
+     */
     getModel() {
         let category = this.state.category;
         let model = this.state.catalogue.find((item) => {
@@ -155,15 +160,16 @@ class InputContainer extends Component {
 
 
     render () {
+        const {hasErrored, values, models, ...rest} = this.state;
         return (
         <div  className='inputContainer inputBox'>
-            <AutoComplete values={this.state.values} handleInputChange={this.handleInputChange} type='category'>Select category</AutoComplete>
-            <AutoComplete values={this.state.models.length !== 0 ? this.state.models : []} handleInputChange={this.handleInputChange} type='name'>Select name</AutoComplete>
+            <AutoComplete values={values} handleInputChange={this.handleInputChange} type='category'>Select category</AutoComplete>
+            <AutoComplete values={models.length !== 0 ? models : []} handleInputChange={this.handleInputChange} type='name'>Select name</AutoComplete>
             <input name='price' placeholder='price' type='number' onChange={(event) => this.handleInputChange(event.target.value, event)}/>
             <div className="buttonCloud cloud" onClick={this.handleAddButtonClick}>
                 <div>Add item</div>
             </div>
-            {this.state.hasErrored ? <div><b>Fill all inputs</b></div> : null}
+            {hasErrored ? <div><b>Fill all inputs</b></div> : null}
         </div>
         )
     }

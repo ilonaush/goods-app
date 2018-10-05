@@ -105,7 +105,7 @@ h3 {
 }
 
 .itemBox, .emptyMessage {
-    width: 41%;
+    width: 43%;
     margin:  0 auto;
 }
 
@@ -151,6 +151,7 @@ h3 {
     border-radius: 200px;
 }
 
+
 .title {
     position: relative;
     width: 200px;
@@ -177,9 +178,8 @@ h3 {
 }
 
 .inputBox, .itemList {
-    border-radius: 10px;
     border: 3px solid #ffdf44;
-    padding: 20px;
+    border-radius: 10px;
 }
 
 .inputBox input {
@@ -195,6 +195,7 @@ input, .selectBox {
     height: 30px;
     border-radius: 10px;
     border: 2px solid #b092c4;
+    margin-bottom: 10px;
 }
 
 input:focus {
@@ -227,6 +228,8 @@ input:focus {
     width: 100%;
     text-align: center;
     outline: 1px solid black;
+    overflow-y: scroll;
+    height: 150px;
 }
 
 .selectBox ul li {

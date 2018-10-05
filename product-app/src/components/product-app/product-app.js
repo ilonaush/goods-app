@@ -26,8 +26,8 @@ class  ProductApp extends Component {
                         <h1 className='head-title'>Goods List</h1>
                     </div>
                 </div>
-                    <InputContainer/>
-                    <ItemContainer/>
+                <InputContainer/>
+                <ItemContainer/>
                 <div className="buttonCloud cloud">
                     <div><Link to='/pdf' className='no-decoration'>View list</Link></div>
                 </div>

@@ -14,14 +14,15 @@ class AutoComplete extends Component {
         this.state = {
             inputFocused: false,
             category: '',
-            matchedItems: this.fillAutoComplete('',this.props.categories || []),
-            inputChanged: false
+            matchedItems: this.fillAutoComplete('', []),
+            inputChanged: false,
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.fillAutoComplete = this.fillAutoComplete.bind(this);
         this.handleFocusLost = this.handleFocusLost.bind(this);
+
     }
 
     /**
@@ -35,16 +36,23 @@ class AutoComplete extends Component {
                     inputChanged: false
                 })
             }
+
+            if (event.target.className === 'option' && event.target.className !== 'select' && event.target.className !== 'arrowDown') {
+                this.handleFocusLost(event);
+            }
         });
+
+
     }
 
     /**
      *  on input focus losing. sends the opted category to InputContainer parent component
      * @param event [object]
      */
-    handleFocusLost(event) {
-        this.props.handleInputChange(event, this.state.category);
+    handleFocusLost() {
+        this.props.handleInputChange(this.state.category, this.props.type );
     }
+
 
     /**
      *
@@ -56,7 +64,7 @@ class AutoComplete extends Component {
     fillAutoComplete (value , categories)  {
         let matchedItems = [];
         if (value === "") {
-            matchedItems = [...categories];
+            matchedItems = [...this.props.values];
             return matchedItems;
         }
 
@@ -74,7 +82,8 @@ class AutoComplete extends Component {
      */
     handleFocus() {
         this.setState({
-            inputFocused: true
+            inputFocused: true,
+            matchedItems: this.fillAutoComplete('', this.props.values),
         })
     }
 
@@ -84,7 +93,6 @@ class AutoComplete extends Component {
      * handles click on the auto complete item ans sets input category value to value of clicked item
      */
     handleClick(event) {
-        debugger;
         const selectedValue = event.target.innerHTML;
         const input = event.target.parentNode.parentNode.childNodes[0];
         input.value = selectedValue;
@@ -101,10 +109,9 @@ class AutoComplete extends Component {
      */
     handleInputChange(event) {
         let category = event.target.value;
-
         this.setState( {
             category,
-            matchedItems: this.fillAutoComplete(category, this.props.categories),
+            matchedItems: this.fillAutoComplete(category, this.props.values),
             inputChanged: true
         })
     }
@@ -113,13 +120,13 @@ class AutoComplete extends Component {
         const state = this.state;
         return (
         <div className='selectBox'>
-            <input name='category' placeholder='Select category...' className='select' onChange={this.handleInputChange}
-                   onFocus={this.handleFocus} onBlur={this.handleFocusLost}/>
-            <div className='arrowDown' onClick={this.handleFocus}></div>
+            <input name='category' placeholder={this.props.children} className='select' onChange={this.handleInputChange}
+                   onFocus={this.handleFocus}/>
+            <div className='arrowDown' onClick={this.handleFocus}/>
             {(state.inputFocused && state.matchedItems.length > 0) || (state.matchedItems.length > 0 && state.inputChanged) ?
                 <ul>
                     {this.state.matchedItems.map((category) => {
-                        return  <li onClick={this.handleClick}>{category}</li>
+                        return  <li className='option' onClick={this.handleClick}>{category}</li>
                     })}
                 </ul> : null
             }

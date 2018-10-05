@@ -117,6 +117,7 @@ button {
     padding: 10px;
     background-color: #f58da8;
     margin-bottom: 10px;
+    border-radius: 50px;
 }
 
 .cloud, .cloudshadow {
@@ -244,3 +245,11 @@ input:focus {
     border-bottom: 1px solid black;
 }
 
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: #f085a3;
+}

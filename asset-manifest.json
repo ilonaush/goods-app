@@ -1,7 +1,14 @@
 {
-  "main.css": "static/css/main.f45deb74.css",
-  "main.css.map": "static/css/main.f45deb74.css.map",
-  "main.js": "static/js/main.2f8d2170.js",
-  "main.js.map": "static/js/main.2f8d2170.js.map",
-  "static\\media\\background.jpg": "static/media/background.a736de5b.jpg"
+  "main.css": "/goods-app/static/css/main.cccf9c29.chunk.css",
+  "main.js": "/goods-app/static/js/main.7a1b0c4b.chunk.js",
+  "main.js.map": "/goods-app/static/js/main.7a1b0c4b.chunk.js.map",
+  "static/js/1.73bf638a.chunk.js": "/goods-app/static/js/1.73bf638a.chunk.js",
+  "static/js/1.73bf638a.chunk.js.map": "/goods-app/static/js/1.73bf638a.chunk.js.map",
+  "runtime~main.js": "/goods-app/static/js/runtime~main.9807fbc8.js",
+  "runtime~main.js.map": "/goods-app/static/js/runtime~main.9807fbc8.js.map",
+  "static/media/App.css": "/goods-app/static/media/background.a736de5b.jpg",
+  "static/css/main.cccf9c29.chunk.css.map": "/goods-app/static/css/main.cccf9c29.chunk.css.map",
+  "index.html": "/goods-app/index.html",
+  "precache-manifest.83e8748d1e4e7969922d930642b319b0.js": "/goods-app/precache-manifest.83e8748d1e4e7969922d930642b319b0.js",
+  "service-worker.js": "/goods-app/service-worker.js"
 }
